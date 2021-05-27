@@ -1,0 +1,14 @@
+{
+    "appPageId": "a52c8de5-ac9d-f1b0-4164-2c31a3746b2b",
+    "appPageName": "verticalcards",
+    "componentName": "verticalcardsComponent",
+    "selectorName": "bh-verticalcards",
+    "htmlFileName": "verticalcards.template.html",
+    "tsFileName": "verticalcards.component.ts",
+    "createDate": "2021-05-24T23:21:01.420Z",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}

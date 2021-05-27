@@ -1,0 +1,14 @@
+{
+    "appPageId": "df9c600d-b908-5b9b-2a9b-6b944f20a0db",
+    "appPageName": "alluicomponents",
+    "componentName": "alluicomponentsComponent",
+    "selectorName": "bh-alluicomponents",
+    "htmlFileName": "alluicomponents.template.html",
+    "tsFileName": "alluicomponents.component.ts",
+    "createDate": "2021-05-20T19:24:13.966Z",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}

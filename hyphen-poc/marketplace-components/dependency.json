@@ -1,0 +1,124 @@
+{
+    "packages": [
+        {
+            "name": "neutrinos-all-default-nodes-plugin",
+            "default": true,
+            "visible": false,
+            "dependencies": [
+                {
+                    "name": "ndefault-all-nodes",
+                    "packageType": "studio-nodes",
+                    "nodes": {
+                        "server": [
+                            "ChildProcess",
+                            "CORS",
+                            "DBConfig",
+                            "GlobalMiddlewareEnd",
+                            "GlobalMiddlewareStart",
+                            "GlobalNext",
+                            "HttpIn",
+                            "HttpOut",
+                            "HttpProxyConfig",
+                            "HttpRequest",
+                            "MiddlewareEnd",
+                            "MiddlewareStart",
+                            "Next",
+                            "RouteMiddlewareEnd",
+                            "RouteMiddlewareStart",
+                            "ServerLog",
+                            "TLSConfig"
+                        ],
+                        "common": [
+                            "CallService",
+                            "Catch",
+                            "Comments",
+                            "Async",
+                            "Script",
+                            "ServiceVariables",
+                            "Start",
+                            "Switch",
+                            "Unknown"
+                        ],
+                        "client": [
+                            "Environment",
+                            "HttpRequest",
+                            "Log",
+                            "Navigation",
+                            "SnackBar",
+                            "Storage",
+                            "CallSSDApi"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "_id": "60ae195f891d1aa657de4fa1",
+            "name": "neutrinos-select-plus",
+            "averageRating": 0,
+            "description": "Material select component with additional capabilities like hint, label etc",
+            "displayName": "Select Plus Component",
+            "lastUpdated": "2021-05-26T09:48:15.293Z",
+            "numberOfDownloads": 0,
+            "packageType": [
+                "studio-package"
+            ],
+            "platformSupportVersion": "7.5.0",
+            "pluginImage": "ng-select-plus.png",
+            "publisher": "Neutrinos",
+            "type": "Components",
+            "uploadedDate": "2021-05-26T09:48:15.293Z",
+            "username": "sankarshan.joshi@neutrinos.co",
+            "version": "1.0.0",
+            "versions": {
+                "1.0.0": {
+                    "packages": [
+                        {
+                            "name": "neutrinos-select-plus",
+                            "version": "1.0.0",
+                            "packageType": "studio-package",
+                            "displayName": "Select Plus Plugin"
+                        }
+                    ],
+                    "platformSupportVersion": {
+                        "min": "7.5.0"
+                    },
+                    "metadata": {
+                        "name": "neutrinos-select-plus",
+                        "displayName": "Select Plus Component",
+                        "version": "1.0.0",
+                        "username": "sankarshan.joshi@neutrinos.co",
+                        "publisher": "Neutrinos",
+                        "platformSupportVersion": {
+                            "min": "7.5.0"
+                        },
+                        "type": "Components",
+                        "description": "Material select component with additional capabilities like hint, label etc",
+                        "pluginImage": "ng-select-plus.png"
+                    },
+                    "version": "1.0.0"
+                }
+            },
+            "archiveFile": "api/zips/undefined",
+            "guide": "60ae19619142820019b0ebf7",
+            "icon": "api/resource/icons/60ae195f9142820019b0ebeb",
+            "screenshots": [
+                "api/resource/screenshots/60ae195f9142820019b0ebed",
+                "api/resource/screenshots/60ae195f9142820019b0ebef",
+                "api/resource/screenshots/60ae19609142820019b0ebf2",
+                "api/resource/screenshots/60ae19609142820019b0ebf5"
+            ],
+            "no_of_downloads_by_packages": {
+                "neutrinos-select-plus": 2
+            },
+            "dependencies": [
+                {
+                    "name": "neutrinos-select-plus",
+                    "version": "1.0.0",
+                    "packageType": "studio-package",
+                    "displayName": "Select Plus Plugin"
+                }
+            ]
+        }
+    ]
+}

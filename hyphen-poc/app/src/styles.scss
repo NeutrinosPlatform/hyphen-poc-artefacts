@@ -1,0 +1,495 @@
+// @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~@angular/material/theming';
+@import 'nDefaults.scss';
+
+@include mat-core();
+
+$app-font: mat-typography-config(
+    $font-family: 'Open Sans',
+);
+
+$app-primary: mat-palette($mat-blue);
+$app-accent: mat-palette($mat-brown, A200, A100, A400);
+
+$app-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as `color` or `typography`.
+$app-theme: mat-light-theme(
+    (
+        color: (
+            primary: $app-primary,
+            accent: $app-accent,
+            warn: $app-warn,
+        ),
+    )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($app-theme);
+@include angular-material-typography($app-font);
+
+@mixin angled-icon($rotate) {
+    border: solid var(--black-text-color);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3.5px;
+    transform: rotate(#{$rotate}deg);
+}
+
+:root {
+    --disabled: rgb(204, 204, 204);
+    --white-text-color: white;
+    --black-text-color: rgb(51, 51, 51);
+    --default-stepper-header-text: rgb(130, 130, 130);
+    --inactive: rgb(130, 130, 130);
+    --primary-blue: rgb(0, 170, 251);
+    --light-gray: rgb(236, 236, 237);
+}
+
+@mixin bold-text {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0px;
+    line-height: 24px;
+}
+
+@for $i from 1 through 6 {
+    h#{$i} {
+        font-family: map-get($app-font, font-family);
+    }
+}
+
+.font-weight-semi-bold {
+    font-weight: 600;
+}
+
+span,
+p,
+mat-hint,
+label {
+    font-family: map-get($app-font, font-family) !important;
+}
+
+.dark-regular-text {
+    font-family: map-get($app-font, font-family) !important;
+    font-size: 1rem;
+    color: var(--black-text-color);
+}
+
+.white-regular-text {
+    font-family: map-get($app-font, font-family) !important;
+    font-size: 1rem;
+    color: var(--white-text-color);
+}
+
+.hint-regular-text {
+    font-family: map-get($app-font, font-family) !important;
+    font-size: 0.75rem;
+}
+
+.mat-form-field-label {
+    font-family: map-get($app-font, font-family) !important;
+    color: var(--black-text-color) !important;
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+    color: var(--primary-blue) !important;
+}
+
+input.mat-datepicker-input::placeholder {
+    color: var(--black-text-color) !important;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.height-100 {
+    height: 100%;
+}
+
+.max-height-100 {
+    max-height: 100%;
+}
+
+.inactive-colored-text-or-image {
+    color: var(--inactive) !important;
+    fill: var(--inactive) !important;
+}
+
+.bg-white {
+    background-color: var(--white-text-color);
+}
+
+.mat-form-field {
+    mat-label,
+    input {
+        @include bold-text();
+    }
+}
+.mat-form-field-disabled {
+    .mat-form-field-suffix,
+    .mat-form-field-prefix {
+        svg {
+            fill: var(--inactive);
+        }
+    }
+    &.mat-form-field-appearance-fill .mat-form-field-underline::before {
+        background-color: var(--black-text-color);
+    }
+}
+
+.mat-form-field-type-mat-select {
+    .mat-select-arrow {
+        @include angled-icon(45);
+    }
+    &.mat-focused {
+        .mat-select-arrow {
+            @include angled-icon(-135);
+            border-color: var(--primary-blue);
+        }
+    }
+    .mat-select-placeholder {
+        font-weight: bold !important;
+    }
+    .mat-select-invalid {
+        .mat-select-placeholder {
+            color: red;
+        }
+    }
+}
+
+.mat-datepicker-toggle {
+    color: var(--black-text-color) !important;
+    &.mat-datepicker-toggle-active {
+        color: var(--primary-blue) !important;
+    }
+}
+
+.postal-code {
+    width: 50%;
+}
+.app-button {
+    @include bold-text;
+    width: 235px;
+    height: 40px;
+    border-radius: 2px !important;
+    background-color: var(--default);
+    &:active {
+        background-color: var(--active);
+    }
+    &:hover {
+        background-color: var(--hover);
+    }
+    &.secondary {
+        color: var(--white-text-color) !important;
+        --default: rgb(245, 132, 35);
+        --hover: rgb(195, 95, 9);
+        --active: rgb(163, 81, 8);
+        height: 56px;
+        width: 137px;
+    }
+    &.primary {
+        color: var(--white-text-color) !important;
+        --default: rgb(0, 170, 251);
+        --hover: rgb(0, 135, 200);
+        --active: rgb(0, 93, 136);
+    }
+    &:disabled {
+        background-color: var(--disabled) !important;
+    }
+}
+
+.custom-mat-select-panel-class {
+    margin-top: 2rem;
+    // margin-left: -12px;
+    .mat-option:first-of-type .mat-option-text {
+        color: var(--primary-blue) !important;
+    }
+    .mat-selected {
+        color: rgba(0, 0, 0, 0.87) !important;
+    }
+}
+
+.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover
+    > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical),
+.cdk-keyboard-focused
+    .mat-calendar-body-active
+    > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical),
+.cdk-program-focused
+    .mat-calendar-body-active
+    > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+    background-color: map-get($app-primary, 100) !important;
+}
+.mat-calendar-body-cell-content {
+    border-radius: 2px !important;
+}
+.mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+    border-color: map-get($app-primary, 300) !important;
+}
+
+.mat-horizontal-stepper-header {
+    &:nth-of-type(1) {
+        padding-left: 0 !important;
+    }
+    &:last-of-type {
+        padding-right: 0.25rem !important;
+    }
+    .mat-step-icon {
+        height: 1.25rem !important;
+        width: 1.25rem !important;
+        box-sizing: border-box;
+        &:not(.mat-step-icon-selected, .mat-step-icon-state-done, .mat-step-icon-state-edit) {
+            background-color: #fff0;
+            border: 1px solid var(--inactive);
+            .mat-step-icon-content {
+                color: var(--default-stepper-header-text);
+            }
+        }
+    }
+    .mat-step-icon-content {
+        font-weight: normal !important;
+        font-size: 0.75rem;
+    }
+    .mat-step-text-label {
+        color: var(--default-stepper-header-text);
+    }
+    .mat-step-label-selected .mat-step-text-label,
+    .mat-step-icon-selected {
+        font-weight: bold;
+        color: map-get($app-accent, A700);
+        .mat-step-icon-content {
+            color: var(--white-text-color);
+        }
+    }
+    & ~ div.mat-stepper-horizontal-line {
+        @include angled-icon(-45);
+        min-width: 0;
+        flex: unset;
+        margin: 0;
+    }
+}
+
+.mat-radio-button {
+    .mat-radio-container,
+    .mat-radio-outer-circle,
+    .mat-radio-inner-circle {
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+    .mat-radio-checked {
+        .mat-radio-outer-circle {
+            border-color: var(--primary-blue);
+        }
+    }
+}
+
+.mat-checkbox {
+    .mat-checkbox-inner-container {
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+    .mat-checkbox-checked {
+        .mat-checkbox-background {
+            border-color: var(--primary-blue);
+        }
+    }
+    .mat-checkbox-background svg path {
+        stroke-width: 1px;
+    }
+}
+
+.mat-error {
+    display: flex !important;
+    align-items: center;
+    height: 1.5rem;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-subscript-wrapper {
+    padding: 0.5rem !important;
+    top: calc(100% - 2.75em);
+    padding-top: 0.25rem !important;
+}
+
+mat-hint {
+    color: unset !important;
+}
+
+.policy-start-date-picker {
+    input.mat-datepicker-input:disabled {
+        color: unset !important;
+    }
+}
+
+.select-field-group {
+    .select-field-group-select-container {
+        .mat-form-field-type-mat-select {
+            @extend .width-100;
+        }
+    }
+}
+
+.mat-form-field-type-mat-select {
+    .mat-select-value-text {
+        @extend .font-weight-semi-bold;
+    }
+    .mat-select-value-text,
+    .mat-select-placeholder {
+        line-height: 1.25rem;
+    }
+}
+
+.radio-group-width {
+    // max-width: 50%;
+    margin-bottom: 2rem !important;
+}
+
+.driver-details-container {
+    padding: 0rem 5rem;
+}
+
+.footer-container {
+    background-color: rgb(1, 74, 105);
+    min-height: 16rem;
+    padding: 2.5rem 5rem;
+    line-height: 20px;
+    margin-bottom: 2.25rem;
+    .footer-ss-logo > img {
+        height: 2.75rem;
+    }
+}
+
+.children-50 {
+    & > * {
+        flex-basis: 50%;
+    }
+}
+
+.cards {
+    padding: 1.5rem !important;
+}
+.card-bold-20px {
+    font-size: 1.25rem;
+    @extend .font-weight-semi-bold;
+}
+
+.card2-ad-rows {
+    // @extend .children-50;
+    // height: 4.375rem;
+    align-items: flex-start !important;
+    > :not(:last-of-type) {
+        margin-right: 1rem;
+    }
+}
+
+.logo-divider {
+    height: 1px;
+    width: 140px;
+    background: #80808061;
+}
+.mat-progress-bar {
+    height: 8px !important;
+    border-radius: 6px !important;
+}
+
+mat-icon[data-mat-icon-name='complete'] {
+    fill: green;
+}
+
+.driver-details-toolbar {
+    height: 2.5rem;
+    background-color: white;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.driver-deatils-header {
+    font-weight: 600;
+}
+
+.ss-logo-container {
+    padding: 1.5rem 0 !important;
+    img {
+        padding-left: 5rem;
+    }
+}
+
+.mat-horizontal-content-container {
+    padding: 0 !important;
+}
+
+.mat-progress-bar-buffer {
+    background-color: var(--light-gray) !important;
+}
+
+.driver-deatils-header {
+    @extend .dark-regular-text;
+    font-size: 2.25rem;
+}
+
+bh-driverdetails {
+    padding-right: 2rem;
+    padding-left: 5rem;
+}
+
+bh-verticalcards {
+    padding-right: 5rem;
+}
+
+input.mat-datepicker-input::placeholder {
+    color: var(--black-text-color) !important;
+}
+
+.padding-lr {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+@media only screen and (max-width: 800px) {
+    .driver-details-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    bh-driverdetails,
+    bh-verticalcards {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .continue-button {
+        width: 100% !important;
+    }
+    .driver-deatils-header {
+        font-size: 1.5rem !important;
+    }
+    .ss-logo-container {
+        padding: 0.5rem 0 !important;
+        img {
+            padding-left: 0rem;
+        }
+    }
+    .footer-container {
+        padding: 2rem 1rem !important;
+    }
+
+    .postal-code {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    bh-driverdetails {
+        padding-left: 0;
+    }
+    bh-verticalcards {
+        padding-right: 0;
+    }
+    bh-driverdetails {
+        padding-right: 0rem;
+    }
+}
+
+.display-none {
+    display: none !important;
+}

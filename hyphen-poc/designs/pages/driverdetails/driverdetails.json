@@ -1,0 +1,14 @@
+{
+    "appPageId": "c85ba8ea-0f28-8930-a21f-4e5e66bcd3d8",
+    "appPageName": "driverdetails",
+    "componentName": "driverdetailsComponent",
+    "selectorName": "bh-driverdetails",
+    "htmlFileName": "driverdetails.template.html",
+    "tsFileName": "driverdetails.component.ts",
+    "createDate": "2021-05-24T10:09:43.286Z",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}

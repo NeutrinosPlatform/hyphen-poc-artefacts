@@ -1,0 +1,34 @@
+<div fxLayout="column " class="ss-logo-container" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+  <mat-toolbar fxLayoutAlign.lt-md="center stretch" class="driver-details-toolbar"><img imgSrc="/Web/logo/singsaver.png" class="height-100"></mat-toolbar>
+</div>
+<div fxLayout="row " class="logo-divider" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
+<mat-horizontal-stepper [linear]="true" fxHide.lt-sm="true" fxHide.sm="true" style="padding-left: 5rem;">
+  <mat-step label="Driver Details" state="number"></mat-step>
+  <mat-step label="Vehicle Details" state="number"></mat-step>
+  <mat-step label="Add-ons" state="number"></mat-step>
+  <mat-step label="Summary" state="number"></mat-step>
+</mat-horizontal-stepper>
+<div fxLayout="column " style="margin-bottom: 1.5rem; margin-top: 1rem;" class="padding-lr" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="true" fxShow.lt-sm="true" fxShow.sm="true">
+  <div style="margin-bottom: 0.5rem;" class="font-weight-semi-bold hint-regular-text">
+    Step 1 of 4</div>
+  <mat-progress-bar [mode] color="primary" value="25" bufferValue="100"></mat-progress-bar>
+</div>
+<div fxLayout="column wrap" style="margin-bottom: 5rem;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+  <div fxLayout="row " class="driver-details-container" fxLayoutAlign="space-around stretch" [fxShow]="true" [fxHide]="false" fxLayout.lt-sm="column nowrap" fxLayoutGap.lt-sm="2.5rem" fxLayout.sm="column nowrap" fxLayoutGap.sm="2.5rem">
+    <bh-driverdetails fxFlex="50"></bh-driverdetails>
+    <bh-verticalcards fxFlex="40"></bh-verticalcards>
+  </div>
+</div>
+<div fxLayout="row " style="padding: 1rem; position: sticky; bottom: 0;     box-shadow: 0 0 4px 1px #8080805c;" class="bg-white" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false" id="sticky-banner" [ngClass]="{ &apos;display-none&apos;: inView }" fxHide.gt-sm="true">
+  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><span class="card-bold-20px">
+                CitiBank</span><span class="dark-regular-text">
+                Private Car Insurance</span></div>
+  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><span class="card-bold-20px">
+                $2,055.00</span>
+    <div fxLayout="row wrap" style="height: 1.5rem;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><img imgSrc="/Web/logo/citibank.png" class="max-height-100"></div>
+  </div>
+</div>
+<div fxLayout="column " class="footer-container" fxLayoutGap="1.25rem" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" id="footer-container">
+  <div fxLayout="row wrap" class="footer-ss-logo" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><img imgSrc="/Web/logo/logo-singsaver-white.png" class="height-100"></div><span style="font-size: 0.875rem;" class="white-regular-text hint-regular-text">
+                &#xA9; 2015 - 2020 SingSaver PTE LTD. All rights reserved. This online platform is operated by SingSaver Pte. Ltd. and by continuing to use www.singsaver.com.sg (the &#x201C;SingSaver Website&#x201D;) or by carrying out a transaction on the SingSaver Website, users are deemed to have agreed with the Terms and Conditions and Privacy Policy of the SingSaver Website. All insurance product-related transactions on the SingSaver Website are arranged and administered by SingSaver Insurance Brokers Pte. Ltd., a wholly owned subsidiary of SingSaver Pte. Ltd. SingSaver Insurance Brokers Pte. Ltd. is a licensed and authorised broker regulated by the Monetary Authority of Singapore (&#x201C;MAS&#x201D;). SingSaver Pte. Ltd. (which administers all other financial products on the SingSaver Website) is not regulated by MAS.</span>
+</div>

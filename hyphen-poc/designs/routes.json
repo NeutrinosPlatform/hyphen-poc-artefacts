@@ -1,0 +1,22 @@
+{
+    "routes": [
+        {
+            "path": "home",
+            "component": "dashboardComponent"
+        },
+        {
+            "path": "demo",
+            "component": "alluicomponentsComponent"
+        },
+        {
+            "path": "''",
+            "redirectTo": "home",
+            "pathMatch": "full",
+            "default": true
+        },
+        {
+            "path": "**",
+            "component": "PageNotFoundComponent"
+        }
+    ]
+}

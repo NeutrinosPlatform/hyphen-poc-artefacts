@@ -1,0 +1,186 @@
+<form #formC="ngForm">
+  <div fxLayout="column " style="margin-bottom: 2.5rem" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <div style="margin-bottom: 1rem;" class="driver-deatils-header">
+      Driver Details</div>
+    <div fxLayout="row " style="height: 1.5rem;margin-bottom: 2rem;" fxLayoutGap="0.5rem" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false"><img imgSrc="/Web/Icons/lock.svg" style="height:100%;" class="inactive-colored-text-or-image"><span class="hint-regular-text inactive-colored-text-or-image">
+                Your data is safe and secure. Fields marked with * are required.</span></div>
+    <div fxLayout="row " style="height: 3.75rem; margin-bottom: 1rem;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><img imgSrc="/Web/logo/myinfo.jpg" class="height-100"></div><button mat-button style="margin-bottom: 1.5rem;" class="app-button primary" type="button">Quick apply with MyInfo</button>
+    <p class="dark-regular-text">
+      Log into MyInfo securely to get a prefilled application form. Save up to 15 minutes, or fill in the detail manually.
+    </p>
+    <p style="margin-bottom: 2.25rem;" class="dark-regular-text">
+      You&#x2019;ll be redirected to access Government of Singapore&#x2019;s website. Please ensure you understand the terms and conditions of the site before continuing.</p>
+    <div fxLayout="column " fxLayoutGap="0.75rem" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+      <mat-form-field [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="true">
+        <input matInput name="fullname" [required]="true" ngModel #fullname="ngModel">
+        <mat-error align="start" *ngIf="fullname.invalid"><img src="assets/Web/Icons/warn.svg" class="height-100">Enter a valid full name</mat-error>
+        <mat-label>Full Name</mat-label> <span matSuffix><mat-icon *ngIf="fullname.valid" svgIcon="complete"></mat-icon></span>
+      </mat-form-field>
+      <mat-form-field [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="true">
+        <input matInput name="email" type="email" [required]="true" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" ngModel #email="ngModel">
+        <mat-error align="start" *ngIf="email.invalid"><img src="assets/Web/Icons/warn.svg" class="height-100">Enter a valid email</mat-error>
+        <mat-label>Email Address</mat-label> <span matSuffix><mat-icon *ngIf="email.valid" svgIcon="complete"></mat-icon></span>
+      </mat-form-field>
+      <mat-form-field [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="true">
+        <input matInput name="phno" type="tel" [required]="true" #phno="ngModel" ngModel pattern="\+65[6|8|9]\d{7}">
+        <mat-error align="start" *ngIf="phno.invalid"><img src="assets/Web/Icons/warn.svg" class="height-100">Enter a valid mobile number</mat-error>
+        <mat-label>Mobile Number</mat-label>
+        <mat-icon matSuffix>
+          <mat-icon *ngIf="phno.valid" svgIcon="complete"></mat-icon>
+        </mat-icon>
+      </mat-form-field>
+      <mat-form-field [hideRequiredMarker]="true" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;">
+        <mat-label>Eligibility</mat-label>
+        <mat-select panelClass="custom-mat-select-panel-class" [required]="true" disableOptionCentering #eligibility="ngModel" ngModel name="eligibility">
+          <mat-option [value]="&apos;1&apos;" disabled="false">Critera1</mat-option>
+          <mat-option [value]="&apos;2&apos;" disabled="false">Critera 2</mat-option>
+          <mat-option [value]="&apos;3&apos;" disabled="false">Criteria 3</mat-option>
+        </mat-select>
+
+
+      </mat-form-field>
+      <mat-form-field [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="true">
+        <input matInput name="nric" [required]="true" ngModel pattern="^[STFG]\d{7}[A-Z]$" #nric="ngModel">
+        <mat-error align="start" *ngIf="phno.invalid"><img src="assets/Web/Icons/warn.svg" class="height-100">Enter valid NRIC</mat-error>
+        <mat-label>NRIC</mat-label>
+        <mat-icon matSuffix>
+          <mat-icon *ngIf="nric.valid" svgIcon="complete"></mat-icon>
+        </mat-icon>
+      </mat-form-field>
+      <mat-form-field [appearance]="&apos;fill&apos;" (click)="picker.open()">
+        <input matInput placeholder="Date of Birth" [matDatepicker]="picker" [(ngModel)]="dob" name="dob" #dobModel="ngModel" [required]="false" [disabled]="false" readonly="true">
+        <mat-datepicker-toggle matSuffix [for]="picker" disabled="false"></mat-datepicker-toggle>
+        <mat-datepicker #picker color="primary" [disabled]="false"></mat-datepicker>
+        <mat-error align="start" *ngIf="dobModel.invalid || !dobModel.value"><img src="assets/Web/Icons/warn.svg" class="height-100">Enter valid DOB</mat-error>
+      </mat-form-field>
+      <mat-radio-group class="radio-group-width" [(ngModel)]="gender" fxLayoutGap="10%" name="gender" [selected]="false" [required]="true">
+        <mat-radio-button [value]="&apos;male&apos;" style="width: 50%;" [required]="false" [checked]="false" color="primary">Male</mat-radio-button>
+        <mat-radio-button [value]="&apos;female&apos;" [required]="false" [checked]="false" color="primary">Female</mat-radio-button>
+      </mat-radio-group>
+      <mat-radio-group class="radio-group-width" [(ngModel)]="maritalStatus" fxLayoutGap="10%" name="maritalStatus" [selected]="false" [required]="true">
+        <mat-radio-button [value]="&apos;single&apos;" style="width: 50%;" [required]="false" [checked]="false" color="primary">Single</mat-radio-button>
+        <mat-radio-button [value]="&apos;married&apos;" [required]="false" [checked]="false" color="primary">Married</mat-radio-button>
+      </mat-radio-group>
+      <mat-form-field [hideRequiredMarker]="true" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;">
+        <mat-label>Occupation</mat-label>
+        <mat-select panelClass="custom-mat-select-panel-class" [required]="true" disableOptionCentering ngModel #ocupation="ngModel" name="ocupation">
+          <mat-option [value]="&apos;1&apos;" disabled="false">Plumber</mat-option>
+          <mat-option [value]="&apos;2&apos;" disabled="false">Engineer</mat-option>
+          <mat-option [value]="&apos;3&apos;" disabled="false">paleontologist</mat-option>
+        </mat-select>
+
+
+      </mat-form-field>
+      <h4>
+        Policy start date</h4>
+      <mat-form-field class="policy-start-date-picker" [appearance]="&apos;fill&apos;" (click)="picker2.open()">
+        <input matInput placeholder="DD / MM / YYYY" [matDatepicker]="picker2" [(ngModel)]="dob2" name="dob2" #dobModel="ngModel" [required]="true" [disabled]="false" readonly="true">
+        <mat-datepicker-toggle matSuffix [for]="picker2" disabled="false"></mat-datepicker-toggle>
+        <mat-datepicker #picker2 color="primary" [disabled]="false"></mat-datepicker>
+        <mat-error align="start" *ngIf="dobModel.invalid"><img src="assets/Web/Icons/warn.svg" class="height-100">Enter valid DOB</mat-error>
+        <mat-hint align="start" *ngIf="true">Policy start date should be within 90 days from today</mat-hint>
+      </mat-form-field>
+      <h4>
+        Claims in the past 3 years</h4>
+      <div fxLayout="row " class="select-field-group" fxFlex="100" fxLayoutGap="1rem" fxLayoutAlign="space-between stretch" [fxShow]="true" [fxHide]="false">
+        <div fxLayout="row wrap" class="select-field-group-select-container" fxFlex="48" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+          <mat-form-field [hideRequiredMarker]="true" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;">
+            <mat-label>Number of claims</mat-label>
+            <mat-select panelClass="custom-mat-select-panel-class" [required]="true" disableOptionCentering ngModel #noofclaims="ngModel" name="noofclaim">
+              <mat-option [value]="&apos;1&apos;" disabled="false">1</mat-option>
+              <mat-option [value]="&apos;2&apos;" disabled="false">2</mat-option>
+              <mat-option [value]="&apos;3&apos;" disabled="false">3</mat-option>
+            </mat-select>
+            <mat-error align="start" *ngIf="noofclaims.invalid"><img src="assets/Web/Icons/warn.svg" class="height-100">This field is required</mat-error>
+
+          </mat-form-field>
+        </div>
+        <div fxLayout="row wrap" class="select-field-group-select-container" fxFlex="48" fxLayoutAlign="space-between stretch" [fxShow]="true" [fxHide]="false">
+          <mat-form-field [hideRequiredMarker]="true" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;">
+            <mat-label>Claim amount</mat-label>
+            <mat-select panelClass="custom-mat-select-panel-class" [required]="true" disableOptionCentering ngModel #claimamount="ngModel" name="clainamount">
+              <mat-option [value]="&apos;1000&apos;" disabled="false">$1000.00</mat-option>
+              <mat-option [value]="&apos;2000&apos;" disabled="false">$2000.00</mat-option>
+              <mat-option [value]="&apos;3000&apos;" disabled="false">$3000.00</mat-option>
+            </mat-select>
+            <mat-error align="start" *ngIf="claimamount.invalid"><img src="assets/Web/Icons/warn.svg" class="height-100">This field is required</mat-error>
+
+          </mat-form-field>
+        </div>
+      </div>
+      <mat-form-field [hideRequiredMarker]="true" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;">
+        <mat-label>No claims discount</mat-label>
+        <mat-select panelClass="custom-mat-select-panel-class" [required]="true" disableOptionCentering ngModel #noclaimsdiscount="ngModel" name="noclaimsdiscount">
+          <mat-option [value]="&apos;5&apos;" disabled="false">5%</mat-option>
+          <mat-option [value]="&apos;10&apos;" disabled="false">10%</mat-option>
+          <mat-option [value]="&apos;15&apos;" disabled="false">15%</mat-option>
+        </mat-select>
+
+
+      </mat-form-field>
+      <div fxLayout="column " style="position: relative; " fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+        <mat-form-field [hideRequiredMarker]="true" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;">
+          <mat-label>I have been driving for</mat-label>
+          <mat-select panelClass="custom-mat-select-panel-class" [required]="true" disableOptionCentering ngModel #ihavebeendrivingfor="ngModel" name="ihavebeendrivingfor">
+            <mat-option [value]="&apos;2&apos;" disabled="false">2 years</mat-option>
+            <mat-option [value]="&apos;3&apos;" disabled="false">3 years</mat-option>
+            <mat-option [value]="&apos;4&apos;" disabled="false">4 years</mat-option>
+          </mat-select>
+
+          <mat-hint align="start" *ngIf="true">You should have at least 2 years driving experience</mat-hint>
+        </mat-form-field>
+      </div>
+      <h4>
+        Mailing Address</h4>
+      <mat-form-field class="postal-code" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="true">
+        <input matInput name="postalcode" [required]="true" ngModel #postalcode="ngModel">
+        <mat-error align="start" *ngIf="postalcode.invalid"><img src="assets/Web/Icons/warn.svg" class="height-100">This field can not be empty</mat-error>
+        <mat-label>Postal Code</mat-label>
+        <mat-icon matSuffix>
+          <mat-icon *ngIf="postalcode.valid" svgIcon="complete"></mat-icon>
+        </mat-icon>
+      </mat-form-field>
+      <mat-form-field [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="true">
+        <input matInput name="adressline1" [required]="true" ngModel #addressline1="ngModel">
+        <mat-error align="start" *ngIf="addressline1.invalid"><img src="assets/Web/Icons/warn.svg" class="height-100">This field can not be empty</mat-error>
+        <mat-label>Address line 1</mat-label>
+        <mat-icon matSuffix>
+          <mat-icon *ngIf="addressline1.valid" svgIcon="complete"></mat-icon>
+        </mat-icon>
+      </mat-form-field>
+      <mat-form-field [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="true">
+        <input matInput name="addressline2" [required]="false" ngModel #addressline2="ngModel">
+        <mat-error align="start" *ngIf="addressline2.invalid"><img src="assets/Web/Icons/warn.svg" class="height-100">This field can not be empty</mat-error>
+        <mat-label>Address line 2</mat-label>
+      </mat-form-field>
+      <div fxLayout="row " class="select-field-group" fxLayoutGap="1rem" fxLayoutAlign="space-between stretch" [fxShow]="true" [fxHide]="false">
+        <mat-form-field style="width: 48%;" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="true">
+          <input matInput name="blocknumber" type="number" [required]="true" ngModel #blocknumber="ngModel">
+          <mat-error align="start" *ngIf="blocknumber.invalid"><img src="assets/Web/Icons/warn.svg" class="height-100">This field can not be empty</mat-error>
+          <mat-label>Block Number</mat-label>
+          <mat-icon matSuffix>
+            <mat-icon *ngIf="blocknumber.valid" svgIcon="complete"></mat-icon>
+          </mat-icon>
+        </mat-form-field>
+        <mat-form-field style="width: 48%;" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="true">
+          <input matInput name="uninumber" type="number" [required]="true" ngModel #unitnumber="ngModel">
+          <mat-error align="start" *ngIf="unitnumber.invalid"><img src="assets/Web/Icons/warn.svg" class="height-100">This field can not be empty</mat-error>
+          <mat-label>Unit Number</mat-label>
+          <mat-icon matSuffix>
+            <mat-icon *ngIf="unitnumber.valid" svgIcon="complete"></mat-icon>
+          </mat-icon>
+        </mat-form-field>
+      </div>
+      <h4>
+        Are you demerit points free?</h4>
+      <mat-radio-group class="radio-group-width" [(ngModel)]="demerit" fxLayoutGap="10%" name="demerit" [selected]="false" [required]="true">
+        <mat-radio-button [value]="&apos;yes&apos;" style="width: 50%;" [required]="false" [checked]="false" color="primary">Yes</mat-radio-button>
+        <mat-radio-button [value]="&apos;no&apos;" [required]="false" [checked]="false" color="primary">No</mat-radio-button>
+      </mat-radio-group>
+      <div fxLayout="row " class="select-field-group" fxFlex="100" fxLayoutGap="1rem" fxLayoutAlign="space-between start" [fxShow]="true" [fxHide]="false">
+        <mat-checkbox [(ngModel)]="consent" id="t-and-c" name="consent" [checked]="false" color="primary" [required]="true" #consentModel="ngModel"></mat-checkbox><label for="t-and-c-input">
+          I consent and authorise SingSaver.com.sg to contact me regarding my car insurance and to disclose any relevant information to the providers I want to apply for.</label>
+      </div>
+    </div>
+  </div><button mat-button class="continue-button app-button secondary" [disabled]="formC.invalid">Continue</button>
+</form>

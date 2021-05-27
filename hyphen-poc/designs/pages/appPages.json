@@ -1,0 +1,22 @@
+{
+    "df9c600d-b908-5b9b-2a9b-6b944f20a0db": {
+        "appPageName": "alluicomponents",
+        "componentName": "alluicomponentsComponent",
+        "createDate": "2021-05-20T19:24:13.966Z"
+    },
+    "1f86513a-a43d-1b6b-271e-87cf38d3a23b": {
+        "appPageName": "dashboard",
+        "componentName": "dashboardComponent",
+        "createDate": "2021-05-24T10:04:55.199Z"
+    },
+    "c85ba8ea-0f28-8930-a21f-4e5e66bcd3d8": {
+        "appPageName": "driverdetails",
+        "componentName": "driverdetailsComponent",
+        "createDate": "2021-05-24T10:09:43.286Z"
+    },
+    "a52c8de5-ac9d-f1b0-4164-2c31a3746b2b": {
+        "appPageName": "verticalcards",
+        "componentName": "verticalcardsComponent",
+        "createDate": "2021-05-24T23:21:01.420Z"
+    }
+}

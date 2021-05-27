@@ -1,0 +1,78 @@
+<div fxLayout="column wrap" style="height: 200px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
+<div fxLayout="column " fxLayoutGap="2rem" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+  <h2>
+    Primary Buttons</h2><button mat-button class="app-button primary">Button</button><button mat-button class="app-button primary" [disabled]="true">Button</button>
+  <h2>
+    Secondary Buttons</h2><button mat-button class="app-button secondary">Button</button><button mat-button class="app-button secondary" [disabled]="true">Button</button>
+</div>
+<div fxLayout="column wrap" style="width: 50%" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+  <h2>
+    Input fields</h2>
+  <mat-form-field [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+    <input matInput placeholder="Input" [required]="false">
+    <mat-label>Input 0</mat-label> <span matSuffix><mat-icon svgIcon="visibility_off_outline"></mat-icon></span>
+  </mat-form-field>
+  <mat-form-field [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+    <input matInput placeholder="Input" [required]="false">
+    <mat-label>Input 1</mat-label> <span matSuffix><mat-icon svgIcon="visibility_outline"></mat-icon></span>
+  </mat-form-field>
+  <mat-form-field [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+    <input matInput placeholder="Input" [required]="false" [disabled]="true">
+    <mat-label>Input 0</mat-label> <span matSuffix><mat-icon svgIcon="visibility_off_outline"></mat-icon></span>
+  </mat-form-field>
+</div>
+<div fxLayout="column wrap" style="width: 50%" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+  <h2>
+    Date Picker</h2>
+  <mat-form-field [appearance]="&apos;fill&apos;">
+    <input matInput placeholder="Date Picker" [matDatepicker]="picker" [required]="false" [disabled]="false">
+    <mat-datepicker-toggle matSuffix [for]="picker" disabled="false"></mat-datepicker-toggle>
+    <mat-datepicker #picker color="primary" [disabled]="false"></mat-datepicker>
+
+  </mat-form-field>
+</div>
+<div fxLayout="column wrap" style="width: 50%" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+  <h2>
+    Select</h2>
+  <mat-form-field [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;">
+    <mat-select panelClass="custom-mat-select-panel-class" placeholder="Select" [required]="true" disableOptionCentering #select1>
+      <ng-template ngFor let-option [ngForOf]="abc" let-i="index">
+        <mat-option [value]="option">{{option}}</mat-option>
+      </ng-template>
+    </mat-select>
+
+  </mat-form-field>
+  <mat-form-field [hideRequiredMarker]="false" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+    <mat-label>Select Label</mat-label>
+    <mat-select placeholder="Select" [required]="false">
+      <ng-template ngFor let-option [ngForOf] let-i="index">
+        <mat-option [value]></mat-option>
+      </ng-template>
+    </mat-select>
+
+
+  </mat-form-field>
+</div>
+<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+  <mat-horizontal-stepper [linear]="true">
+    <mat-step label="custom mat stepper label" state="number"></mat-step>
+    <mat-step label="custom mat stepper label" state="number"></mat-step>
+    <mat-step label="custom mat stepper label" state="number"></mat-step>
+  </mat-horizontal-stepper>
+</div>
+<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+  <h2>
+    Radio</h2>
+  <mat-radio-button [required]="false" [checked]="false" color="primary">Radio Button1</mat-radio-button>
+  <mat-radio-button [required]="false" [checked]="true" color="primary">Radio Button1</mat-radio-button>
+  <mat-radio-button [required]="false" [disabled]="true" [checked]="false" color="primary">Radio Button1</mat-radio-button>
+  <mat-radio-group [required]="false"></mat-radio-group>
+</div>
+<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+  <h2>
+    Checkbox</h2>
+  <mat-checkbox [checked]="false" color="primary" [required]="false">Checkbox</mat-checkbox>
+  <mat-checkbox [checked]="true" color="primary" [required]="false">Checkbox Selected</mat-checkbox>
+  <mat-checkbox [checked]="false" color="primary" [required]="false" [disabled]="true">Checkbox disabled</mat-checkbox>
+</div>
+<div fxLayout="column wrap" style="height: 200px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>

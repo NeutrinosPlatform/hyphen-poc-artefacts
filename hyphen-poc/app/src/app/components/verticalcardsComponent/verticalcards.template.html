@@ -1,0 +1,62 @@
+<div fxLayout="column wrap" fxLayoutGap="2.5rem" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+  <mat-card fxHide.sm="true" fxHide.lt-sm="true" class="cards">
+    <mat-card-title class="font-weight-semi-bold dark-regular-text" style="font-size: 1.8rem; margin-bottom: 1.5rem;">You are applying for</mat-card-title>
+
+    <mat-card-content style="border-bottom: 1px solid #ececed; margin-bottom: 1rem;">
+      <div fxLayout="row " style="margin-bottom: 1rem;" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><span class="card-bold-20px">
+                CitiBank</span><span class="dark-regular-text">
+                Private Car Insurance</span></div>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+          <div fxLayout="row wrap" style="height: 1.5rem;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><img imgSrc="/Web/logo/citibank.png" class="max-height-100"></div>
+        </div>
+      </div>
+    </mat-card-content>
+
+    <mat-card-content style="Payment Summary">
+      <div fxLayout="column " fxLayoutGap="1rem" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+        <div fxLayout="row " style="bottom-border: 1px solid gray;" class="children-50" fxLayoutAlign="start space-between" [fxShow]="true" [fxHide]="false">
+          <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><span class="card-bold-20px">
+                Total Premium</span></div>
+          <div fxLayout="row wrap" fxLayoutAlign="end stretch" [fxShow]="true" [fxHide]="false"><span class="card-bold-20px">
+                $2,055.00</span></div>
+        </div>
+        <div fxLayout="row " style="bottom-border: 1px solid gray;" class="children-50" fxLayoutAlign="start space-between" [fxShow]="true" [fxHide]="false">
+          <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><span class="dark-regular-text font-weight-semi-bold">
+                Start date:</span></div>
+          <div fxLayout="row wrap" fxLayoutAlign="end stretch" [fxShow]="true" [fxHide]="false"><span class="font-weight-semi-bold dark-regular-text">
+                14/05/2021</span></div>
+        </div>
+        <div fxLayout="row " style="bottom-border: 1px solid gray;" class="children-50" fxLayoutAlign="start space-between" [fxShow]="true" [fxHide]="false">
+          <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><span class="font-weight-semi-bold dark-regular-text">
+                End Date:</span></div>
+          <div fxLayout="row wrap" fxLayoutAlign="end stretch" [fxShow]="true" [fxHide]="false"><span class="font-weight-semi-bold dark-regular-text">
+                13/05/2022</span></div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="cards">
+    <mat-card-title class="card-bold-20px" style="margin-bottom: 1rem;">Key Benefits</mat-card-title>
+
+    <mat-card-content>
+      <div fxLayout="column " fxLayoutGap="1.5rem" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
+        <div fxLayout="row " class="card2-ad-rows" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
+          <div fxLayout="row " fxFlex="3rem" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><img imgSrc="/Web/Icons/product1.svg" class="width-100"></div>
+          <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><span class="dark-regular-text">
+                Product specific benefit number one. Estimate two to three lines max for product info here</span></div>
+        </div>
+        <div fxLayout="row " class="card2-ad-rows" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
+          <div fxLayout="row " fxFlex="3rem" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><img imgSrc="/Web/Icons/product2.svg" class="width-100"></div>
+          <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><span class="dark-regular-text">
+                Product specific benefit number two. Estimate two to three lines max for product info here</span></div>
+        </div>
+        <div fxLayout="row " class="card2-ad-rows" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
+          <div fxLayout="row " fxFlex="3rem" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><img imgSrc="/Web/Icons/product3.svg" class="width-100"></div>
+          <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><span class="dark-regular-text">
+                Product specific benefit number three. Estimate two to three lines max for product info here</span></div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
